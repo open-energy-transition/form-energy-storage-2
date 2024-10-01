@@ -12,6 +12,8 @@ import sys
 
 sys.path.append("workflow/pypsa-eur/scripts")
 
+from _helpers import path_provider, get_scenarios, get_rdir
+
 min_version("8.5")
 
 
@@ -49,7 +51,7 @@ use rule * from pypsaeur
 
 from pathlib import Path
 
-data_dir = Path("workflow/submodules/pypsa-eur/data")
+data_dir = Path("workflow/pypsa-eur/data")
 
 
 rule get_data:

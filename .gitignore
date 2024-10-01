@@ -6,6 +6,11 @@
 *.pdf
 *.png
 
+# generated files
+results/
+resources/
+data/
+
 # Python
 *.pyc
 build/
