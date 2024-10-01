@@ -1,0 +1,4 @@
+[submodule "workflow/pypsa-eur"]
+	path = workflow/pypsa-eur
+	url = https://github.com/open-energy-transition/pypsa-eur
+	branch = form_energy_storage
