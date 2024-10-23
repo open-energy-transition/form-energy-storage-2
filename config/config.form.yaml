@@ -36,12 +36,12 @@ scenario:
   ll:
   - v1.27  # v1.x with x according to NEP and TYNDP (existing_capacities=zero)
   clusters:
-  - 50
+  - 52
   planning_horizons:
   - 2035
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
-countries: ['AT', 'BE', 'CH', 'CZ', 'DE', 'DK', 'FR', 'LU', 'NL', 'PL', 'SE']
+countries: ['AT', 'BE', 'CH', 'CZ', 'DE', 'DK', 'FR', 'IT', 'LU', 'NL', 'PL', 'SE']
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#snapshots
 snapshots:
@@ -142,7 +142,7 @@ sector:
   land_transport_fuel_cell_share:
     2035: 0
   land_transport_electric_share:
-    2035: 0. # FE input
+    2035: 0.30 # FE input
   land_transport_ice_share:
     2035: 0.70
   reduce_space_heat_exogenously: true
@@ -150,6 +150,8 @@ sector:
     2035: 0.11
   tes: false
   marginal_cost_storage: 0. #1e-4
+  stores: ["H2", "battery"]
+  storage_units: []
   hydrogen_fuel_cell: true
   hydrogen_turbine: false
   hydrogen_underground_storage: true
