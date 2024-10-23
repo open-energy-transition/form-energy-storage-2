@@ -34,8 +34,7 @@ foresight: myopic
 # Wildcard docs in https://pypsa-eur.readthedocs.io/en/latest/wildcards.html
 scenario:
   ll:
-  # TODO: derive x for NEP additions
-  - v1.5  # v1.x mit x nach NEP (existing_capacities=zero)
+  - v1.27  # v1.x with x according to NEP and TYNDP (existing_capacities=zero)
   clusters:
   - 50
   planning_horizons:
@@ -61,22 +60,15 @@ enable:
   drop_leap_day: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
-# TODO: add carbon budget for Germany and surrounding countries; interpolate 2035 between 2030 and 2040
 co2_budget:
-  2020: 0.701
-  2025: 0.524
-  2030: 0.297
-  2035: 0.150
-  2040: 0.071
-  2045: 0.032
-  2050: 0.000
+  2035: 0.376 # derived from individual countries carbon emission targets
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#electricity
 electricity:
   max_hours:
     battery: 6
     H2: 168
-  custom_powerplants: false # TODO: German custom CHP from Ariadne: only if a lot of capacity
+  custom_powerplants: false # TODO: Custom PP from EEE project
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#atlite
 atlite:
@@ -137,7 +129,7 @@ existing_capacities:
   - uranium
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
-sector: # TODO: add flags for battery techs
+sector:
   transport: true
   heating: true
   biomass: false
