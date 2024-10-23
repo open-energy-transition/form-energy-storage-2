@@ -165,7 +165,7 @@ sector:
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#costs
 costs:
-  year: 2030
+  year: 2035
   version: v0.9.2
   social_discountrate: 0.02
   fill_values:
