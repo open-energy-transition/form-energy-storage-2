@@ -198,6 +198,6 @@ costs:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
   focus_weights:
-    DE: 0.7
+    DE: 0.6
   temporal:
     resolution_sector: 100H #2920SEG # TODO: low for development, change this later
