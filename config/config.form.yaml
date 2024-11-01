@@ -34,7 +34,7 @@ foresight: myopic
 # Wildcard docs in https://pypsa-eur.readthedocs.io/en/latest/wildcards.html
 scenario:
   ll:
-  - v1.27  # v1.x with x according to NEP and TYNDP (existing_capacities=zero)
+  - v1.11  # v1.x with x according to additional NEP links (existing_capacities=zero)
   clusters:
   - 52
   planning_horizons:
@@ -66,8 +66,9 @@ co2_budget:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#electricity
 electricity:
   max_hours:
-    battery: 6
-    H2: 168
+    li-ion battery: [4, 6]
+    H2: [168]
+    iron-air battery: [100]
   custom_powerplants: false # TODO: Custom PP from EEE project
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#atlite
@@ -150,8 +151,8 @@ sector:
     2035: 0.11
   tes: false
   marginal_cost_storage: 0. #1e-4
-  stores: ["H2", "battery"]
-  storage_units: []
+  stores: ["H2"]
+  storage_units: ["li-ion battery", "iron-air battery"]
   hydrogen_fuel_cell: true
   hydrogen_turbine: false
   hydrogen_underground_storage: true
@@ -166,7 +167,7 @@ sector:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#costs
 costs:
   year: 2035
-  version: v0.9.2
+  version: v0.9.2 # TODO: change to commit with new cost assumptions
   social_discountrate: 0.02
   fill_values:
     FOM: 0
@@ -188,7 +189,7 @@ costs:
     H2: 0.
     electrolysis: 0.
     fuel cell: 0.
-    battery: 0.
+    li-ion battery: 0.
     battery inverter: 0.
   emission_prices:
     enable: false
