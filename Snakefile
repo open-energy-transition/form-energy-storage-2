@@ -77,6 +77,26 @@ rule clean:
         shutil.rmtree("results")
         print("Data downloaded to data/ has not been cleaned.")
 
+rule plot_line_loading_myopic:
+    params:
+        plotting=config_provider("plotting"),
+    input:
+        network=RESULTS
+        + "postnetworks/base_s_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}.nc",
+    output:
+        map=RESULTS
+            + "maps/base_s_{clusters}_l{ll}_{opts}_{sector_opts}-line_loading_{planning_horizons}.pdf"
+    benchmark:
+        (
+            RESULTS
+            + "benchmarks/plot_line_loading/base_s_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
+        )
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/plot_line_loading.py"
+    
+
 # example how to use rule from pypsa-eur
 # use rule solve_sector_network_myopic from pypsaeur with:
 #     params:
