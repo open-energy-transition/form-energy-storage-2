@@ -1,3 +1,4 @@
+**REMARK!! This is an outdated version of the project repository and has been archived. Refer to https://github.com/open-energy-transition/form-energy-storage for the updated project PyPSA-Eur fork** 
 # The Role of Energy Storage in Germany
 This repository offers a reproducible workflow for the analysis of the role of short-, medium- and long-duration energy storages in Germany 2035.
 
